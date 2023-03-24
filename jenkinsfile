@@ -18,12 +18,12 @@ pipeline{
     stages{
         stage('Dependencies'){
             steps{
-                bat "npm i"
+                sh "npm i"
             }
         }
         stage('e2e Test'){
             steps{
-                    bat "npx cypress run"
+                    sh "npx cypress run"
             }
         }
         stage('Deploy'){
