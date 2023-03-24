@@ -1,0 +1,38 @@
+{
+  "name": "nttdata-cypress-web-api",
+  "version": "1.0.0",
+  "description": "e2e Testing Cypress with cucumber",
+  "main": "test",
+  "scripts": {
+    "test": "cypress open",
+    "runChrome": "cypress run --browser chrome",
+    "start": "npx cypress run --record --key 2fed3201-5cd8-46a2-8d5a-77543ab2cfee --browser chrome",
+    "tag": "cypress run --env tags=@HappyPath"
+  },
+  "keywords": [
+    "automation",
+    "cypress",
+    "cucumber",
+    "mysql",
+    "api",
+    "web"
+  ],
+  "author": "Josimar Leon Canto",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.4",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^12.7.0",
+    "esbuild": "^0.17.11"
+  },
+  "dependencies": {
+    "pg": "^8.10.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "filterSpecs": true,
+    "omitFiltered": true,
+    "stepDefinitions": [
+      "cypress/e2e/**/step-definitions/*.{js, ts}"
+    ]
+  }
+}
